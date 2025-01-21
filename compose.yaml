@@ -15,6 +15,10 @@ services:
       - rabbitmq
     volumes:
       - ./songs:/app/songs
+    develop:
+      watch:
+        - path: ./api  # Specify the path correctly
+          action: rebuild
 
   worker:
     build:
